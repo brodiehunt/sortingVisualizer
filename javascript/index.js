@@ -8,7 +8,8 @@ var divsArray = [],
     algoContainer = document.getElementById("algo-container"),
     arraySize = 50,
     divWidthAsPercentage = 100 / arraySize,
-    time = 0;
+    time = 0,
+    steps = 0;
 
 
 
@@ -28,44 +29,12 @@ function createArray() {
 }
 
 
-function transformDiv(div, divHeight) {
+function transformDiv(div, divHeight, color) {
   window.setTimeout(() => {
     div.style= "width:" + divWidthAsPercentage + "%; height:" + divHeight + "%;";
-  }, time+=25)
+  }, time+=15)
   
 
-}
-
-function bubbleSort() {
-  for (let i = 0; i < arraySize; i++) {
-    for (let j = i + 1; j < arraySize +1; j++) {
-      if (divsHeight[i] > divsHeight[j]) {
-        let temp = divsHeight[i];
-        divsHeight[i] = divsHeight[j];
-        divsHeight[j] = temp;
-        transformDiv(divsArray[i], divsHeight[i]);
-        transformDiv(divsArray[j], divsHeight[j]);
-      }
-    }
-  }
-}
-
-function selectionSort() {
-  for (let i = 0; i < arraySize; i++) {
-    let min = i;
-    for (let j = i + 1; j < arraySize; j++) {
-      if (divsHeight[j] < divsHeight[min]) {
-        min = j;
-      }
-    }
-    if (min !== i) {
-      let temp = divsHeight[i];
-      divsHeight[i] = divsHeight[min];
-      divsHeight[min] = temp;
-      transformDiv(divsArray[i], divsHeight[i]);
-      transformDiv(divsArray[min], divsHeight[min]);
-    }
-  }
 }
 
 

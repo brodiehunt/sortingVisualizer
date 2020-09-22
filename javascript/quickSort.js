@@ -40,5 +40,8 @@ function quickSort(items, left, right) {
   return items;
 }
 function quickSortCaller() {
+  time = 0;
+  console.log("starting");
   quickSort(divsHeight, 0, divsHeight.length -1);
+  console.log("finished")
 }
